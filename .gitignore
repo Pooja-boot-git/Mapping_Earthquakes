@@ -10,6 +10,8 @@ __pycache__/
 .Python
 # Ignore the config.js file.
 config.js
+# Ignore .DS_Store to avoid conflict
+.DS_Store
 build/
 develop-eggs/
 dist/
