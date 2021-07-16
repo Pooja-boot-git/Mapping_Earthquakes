@@ -1,8 +1,20 @@
-// Add console.log to check to see if our code is working.
-console.log("working");
-// Create the map object with a center and zoom level.
-let map = L.map('mapid').setView([34.0522, -118.2437], 4);
+// Get data from cities.js
+let cityData = cities;
 
+var map = L.map('mapid').setView([40.7, -94.5], 5);
+
+// Loop through the cities array and create one marker for each city.
+cityData.forEach(function(city) {
+  console.log(city)
+  L.circleMarker(city.location, {
+    radius: ((city.population)/200000),
+    lineweight: 6,
+    color: "orange",
+    fillColor: "yellow"
+  })
+  .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.population.toLocaleString() + "</h3>")
+.addTo(map);
+});
 
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -18,9 +30,5 @@ streets.addTo(map);
 // adding maker to our map
 //var marker = L.marker([34.0522, -118.2437]).addTo(map);
 
-L.circleMarker([34.0522, -118.2437], {
-   color: "black",
-   fillcolor: "yellow",
-   fillOpacity: 0.2,
-   radius: 100
- }).addTo(map);
+//circle.bindPopup("I am a circle.");
+//polygon.bindPopup("I am a polygon.");
