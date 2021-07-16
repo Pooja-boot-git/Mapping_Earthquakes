@@ -1,4 +1,3 @@
-
 // An array containing each city's location, state, and population.
 let cities = [{
     location: [40.7128, -74.0059],
@@ -31,4 +30,4 @@ let cities = [{
     population: 1660272
   }
   ];
-  
+  ];
