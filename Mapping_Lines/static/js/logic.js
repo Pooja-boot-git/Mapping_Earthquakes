@@ -1,5 +1,3 @@
-// Get data from cities.js
-let cityData = cities;
 // center of the map set to SFO
 var map = L.map('mapid',{
     center: [37.6213, -122.3790],
